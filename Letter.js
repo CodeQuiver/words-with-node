@@ -3,7 +3,7 @@
 
     //initializing constructor variables with defaults rather than having parameters passed in- will have them re-set by later logic.
 var Letter = function(newChar) {
-    this.character = JSON.stringify(newChar); //   * A string value to store the underlying character for the letter
+    this.character = newChar; //   * A string value to store the underlying character for the letter
     this.guessed = false; //   * A boolean value that stores whether that letter has been guessed yet
     this.getChar = function () {
         if (this.guessed == true) {
