@@ -2,10 +2,10 @@
 
 
     //initializing constructor variables with defaults rather than having parameters passed in- will have them re-set by later logic.
-function Letter() {
-    this.character = ""; //   * A string value to store the underlying character for the letter
+var Letter = function(newChar) {
+    this.character = JSON.stringify(newChar); //   * A string value to store the underlying character for the letter
     this.guessed = false; //   * A boolean value that stores whether that letter has been guessed yet
-    this.answerChar = function () {
+    this.getChar = function () {
         if (this.guessed == true) {
             return this.character;
         } else {
@@ -13,7 +13,7 @@ function Letter() {
         }
     } //   * A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
 
-    this.checkChar = function (charGuess) {
+    this.checkCharGuess = function (charGuess) {
         if (this.character == charGuess) {
             this.guessed = true;
             // return true; //true= the guess was a match
@@ -26,4 +26,7 @@ function Letter() {
     } //   * A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 }
 
-module.exports = Letter();
+// var testing = new Letter("a");
+// console.log(testing); //ran this for testing- successfully passed, but leaving this in for future tests if needed
+
+module.exports = Letter;
