@@ -25,7 +25,7 @@ var Word = function(answerWord) {
     //============= END DEFINE ARRAY ===================================================================//
 
         //=================== METHOD 1 =====================================================================//
-        //   * A function that returns a string representing the word. This should call the function on each letter object ( getChar() in `Letter.js`) that displays the character or an underscore and concatenate those together.
+        //returns a string representing the word. This should call the function on each letter object ( getChar() in `Letter.js`) that displays the character or an underscore and concatenate those together.
 
         this.buildWordString = function() {
             //init wordString to build on
@@ -43,7 +43,7 @@ var Word = function(answerWord) {
 
 
         //=================== METHOD 2 ======================================================================//
-        //   * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
+        //takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
         this.compareGuess = function(userGuessChar) {
             userGuessChar = userGuessChar.toLowerCase(); //doing this for comparisons later
             // console.log("Word.compareGuess: answerArray.length =" + answerArray.length);
@@ -54,7 +54,6 @@ var Word = function(answerWord) {
         }
 
         //=================== END METHOD 2 ==================================================================//
-
 }
 
 //TEST FUNCTION
