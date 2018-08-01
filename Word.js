@@ -32,10 +32,12 @@ var Word = function(answerWord) {
             var wordString = "";
             //loop through each Letter object in answerArray
             for (let i = 0; i < answerArray.length; i++) {
-                // console.log("Word.buildWordString: About to call getChar for this.answerArray ele "+ i);
+                console.log("Word.buildWordString: About to call getChar for this.answerArray ele "+ i);
                 var stringResult = this.answerArray[i].getChar(); //call getChar
                 wordString = wordString + stringResult; //concatenate all returns together
             }
+            console.log("This is the return from buildWordString");
+            console.log(wordString);
             return wordString;
         }
 
@@ -46,9 +48,9 @@ var Word = function(answerWord) {
         //takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
         this.compareGuess = function(userGuessChar) {
             userGuessChar = userGuessChar.toLowerCase(); //doing this for comparisons later
-            // console.log("Word.compareGuess: answerArray.length =" + answerArray.length);
+            console.log("Word.compareGuess: answerArray.length =" + answerArray.length);
             for (let i = 0; i < answerArray.length; i++) {
-                // console.log("Word.compareGuess: About to call checkCharGuess for this.answerArray ele "+ i);
+                console.log("Word.compareGuess: About to call checkCharGuess for this.answerArray ele "+ i);
                 this.answerArray[i].checkCharGuess(userGuessChar);
             }
         }
@@ -61,9 +63,10 @@ function testWord() {
     console.log("I'm going to test word.js");
     var newWord = new Word("Awesome");
     newWord.compareGuess("A");
+    newWord.buildWordString();
 }
 //END TEST FUNCTION
 
 // console.log(new Word("Awesome"));
 
-// testWord();
+testWord();
