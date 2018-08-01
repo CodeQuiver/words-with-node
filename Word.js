@@ -69,4 +69,4 @@ function testWord() {
 
 // console.log(new Word("Awesome"));
 
-testWord();
+// testWord();
