@@ -58,15 +58,17 @@ var Word = function(answerWord) {
         //=================== END METHOD 2 ==================================================================//
 }
 
-//TEST FUNCTION
-function testWord() {
-    console.log("I'm going to test word.js");
-    var newWord = new Word("Awesome");
-    newWord.compareGuess("A");
-    newWord.buildWordString();
-}
-//END TEST FUNCTION
+// //TEST FUNCTION
+// function testWord() {
+//     console.log("I'm going to test word.js");
+//     var newWord = new Word("Awesome");
+//     newWord.compareGuess("A");
+//     newWord.buildWordString();
+// }
+// //END TEST FUNCTION
 
 // console.log(new Word("Awesome"));
 
 // testWord();
+
+module.exports = Word;
