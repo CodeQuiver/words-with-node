@@ -12,6 +12,9 @@ var computerChoices = ["profiteroles", "red velvet cake", "angel food cake", "bo
 //init variable to hold answer word
 var computerAnswer = "";
 
+//init variable to hold user guess count- 10 wrong guesses allowed
+var userGuessCount = 10;
+
 //================ END GLOBAL VARIABLES ==================//
 
 //================ FUNCTIONS =============================//
@@ -23,11 +26,38 @@ function newAnswer() {
     return computerAnswer;
 }
 
+//User Prompt For Guess Function
+function userPrompt() {
+    inquirer
+      .prompt([
+          // Guess a letter
+          {
+              type: "input",
+              message: "\nGuess a Letter: ",
+              name: "userGuessLetter"
+          }
+      ])
+      .then(function(inquirerResponse){ //process user's responses
+      //1- Check against answer- Word.compareGuess method
+      //2- display Correct or incorrect, 
+        //if incorrect update number of guesses to 1 less
+      //3- check if word is complete- if guessed is false for any letter in Word.answerArray.guessed then go to normal program flow, otherwise go to "You Win! \nPlay again?"
+      //4- print current representation of word with blanks
+    });
+};
+
 //================ END FUNCTIONS =============================//
 
-// use the `Word` constructor to store the answer word
+// use the `Word` constructor to store the answer word- calling newAnswer function to select a word.
 var finalComputerAnswer = new Word(newAnswer());
-console.log(finalComputerAnswer);
+//TESTING
+// console.log(finalComputerAnswer);
 
-//Prompt the user for each guess
-//keep track of the user's remaining guesses
+//display welcome message-
+    //"Welcome to Words with Node!
+    // \nTo Play, try to guess the word below one letter at a time.
+    // \nYou get 10 wrong guesses.
+    // \nReady? Let's Play!\n"
+
+//display current blanks representation of word- calling Word.buildWordString method
+//prompt user for a guess and display # of guesses remaining
