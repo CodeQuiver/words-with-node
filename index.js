@@ -38,17 +38,25 @@ function userPrompt(finalComputerAnswer) {
           }
       ])
       .then(function(inquirerResponse){ //process user's responses
-      //1- Check against answer- Word.compareGuess method
-        //run the compare function from Word to update "guessed" value
-        finalComputerAnswer.compareGuess(inquirerResponse.userGuessLetter);
+        //1- Check against answer- Word.compareGuess method
+            //run the compare function from Word to update "guessed" value
+            finalComputerAnswer.compareGuess(inquirerResponse.userGuessLetter);
+            
+        //2- print current representation of word with blanks
+        console.log(finalComputerAnswer.buildWordString());
 
-      //2- display Correct or incorrect- will need separate function for this
+        //3- display Correct or incorrect- will need separate function for this
         //if incorrect update number of guesses to 1 less
-      //3- check if word is complete- if guessed is false for any letter in Word.answerArray.guessed then go to normal program flow, otherwise go to "You Win! \nPlay again?"
-      //4- print current representation of word with blanks
-      console.log(finalComputerAnswer.buildWordString());
+
+        //4- check if word is complete- if guessed is false for any letter in Word.answerArray.guessed then prompt again, otherwise go to "You Win! \nPlay again?"
+        isGameComplete(finalComputerAnswer);
     });
 };
+
+//Check Word Completion Function
+function isGameComplete(finalComputerAnswer) {
+    console.log(finalComputerAnswer);
+}
 
 //================ END FUNCTIONS =============================//
 
