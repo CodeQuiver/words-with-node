@@ -48,10 +48,11 @@ var Word = function(answerWord) {
         //takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
         this.compareGuess = function(userGuessChar) {
             userGuessChar = userGuessChar.toLowerCase(); //doing this for comparisons later
-            console.log("Word.compareGuess: answerArray.length =" + answerArray.length);
+            // console.log("Word.compareGuess: answerArray.length =" + answerArray.length);
             for (let i = 0; i < answerArray.length; i++) {
-                console.log("Word.compareGuess: About to call checkCharGuess for this.answerArray ele "+ i);
+                // console.log("Word.compareGuess: About to call checkCharGuess for this.answerArray ele "+ i);
                 this.answerArray[i].checkCharGuess(userGuessChar);
+                return this.answerArray[i].checkCharGuess(userGuessChar);//this returns as the function value the true or false return from the functions being called, so we can tell the user if their guess was correct
             }
         }
 
