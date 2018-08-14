@@ -55,7 +55,27 @@ function userPrompt(finalComputerAnswer) {
 
 //Check Word Completion Function
 function isGameComplete(finalComputerAnswer) {
-    console.log(finalComputerAnswer);
+    // console.log(finalComputerAnswer);
+    for (let i = 0; i < finalComputerAnswer.answerArray.length; i++) {
+        const checkLetter = finalComputerAnswer.answerArray[i];
+        if (checkLetter.guessed == false) {
+            //if any letter found that hasn't been guessed in the answer object
+            //prompt for next guess
+            userPrompt(finalComputerAnswer);
+            return;
+        } else {
+            console.log("You Win! \nPlay again?");
+            // inquirer
+            //     .prompt([
+
+            //     ])
+            //     .then(
+
+            //     )
+        }
+
+        
+    }
 }
 
 //================ END FUNCTIONS =============================//
@@ -63,10 +83,10 @@ function isGameComplete(finalComputerAnswer) {
 // use the `Word` constructor to store the answer word- calling newAnswer function to select a word.
 // var finalComputerAnswer = new Word(newAnswer());
 computerAnswer = newAnswer();
-console.log(computerAnswer);
+// console.log(computerAnswer);
 var finalComputerAnswer = new Word(computerAnswer);
 //TESTING
-console.log(finalComputerAnswer);
+// console.log(finalComputerAnswer);
 
 
 
