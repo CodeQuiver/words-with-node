@@ -27,7 +27,7 @@ function newAnswer() {
 }
 
 //User Prompt For Guess Function
-function userPrompt() {
+function userPrompt(finalComputerAnswer) {
     inquirer
       .prompt([
           // Guess a letter
@@ -40,7 +40,7 @@ function userPrompt() {
       .then(function(inquirerResponse){ //process user's responses
       //1- Check against answer- Word.compareGuess method
         //run the compare function from Word
-        Word.compareGuess(inquirerResponse.userGuessLetter);
+        finalComputerAnswer.compareGuess(inquirerResponse.userGuessLetter);
         // inquirerResponse.compareGuess(inquirerResponse.userGuessLetter);
 
         //store whether function returns true or false
@@ -71,7 +71,7 @@ console.log(finalComputerAnswer);
     // \nYou get 10 wrong guesses.
     // \nReady? Let's Play!\n"
 
-//display current blanks representation of word- calling Word.buildWordString method
-// console.log(Word.buildWordString());
+//display current blanks representation of word- calling .buildWordString method on answer
+console.log(finalComputerAnswer.buildWordString());
 //prompt user for a guess and display # of guesses remaining
-// userPrompt();
+userPrompt(finalComputerAnswer);
