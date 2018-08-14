@@ -39,17 +39,14 @@ function userPrompt(finalComputerAnswer) {
       ])
       .then(function(inquirerResponse){ //process user's responses
       //1- Check against answer- Word.compareGuess method
-        //run the compare function from Word
+        //run the compare function from Word to update "guessed" value
         finalComputerAnswer.compareGuess(inquirerResponse.userGuessLetter);
-        // inquirerResponse.compareGuess(inquirerResponse.userGuessLetter);
 
-        //store whether function returns true or false
-        // var guessWasCorrect = inquirerResponse.compareGuess(inquirerResponse.userGuessLetter);
-        // console.log(guessWasCorrect);
-      //2- display Correct or incorrect, 
+      //2- display Correct or incorrect- will need separate function for this
         //if incorrect update number of guesses to 1 less
       //3- check if word is complete- if guessed is false for any letter in Word.answerArray.guessed then go to normal program flow, otherwise go to "You Win! \nPlay again?"
       //4- print current representation of word with blanks
+      console.log(finalComputerAnswer.buildWordString());
     });
 };
 

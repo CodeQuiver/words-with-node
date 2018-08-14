@@ -32,12 +32,12 @@ var Word = function(answerWord) {
             var wordString = "";
             //loop through each Letter object in answerArray
             for (let i = 0; i < answerArray.length; i++) {
-                console.log("Word.buildWordString: About to call getChar for this.answerArray ele "+ i);
+                // console.log("Word.builddWordString: About to call getChar for this.answerArray ele "+ i);
                 var stringResult = this.answerArray[i].getChar(); //call getChar
                 wordString = wordString + stringResult; //concatenate all returns together
             }
-            console.log("This is the return from buildWordString");
-            console.log(wordString);
+            // console.log("This is the return from buildWordString");
+            // console.log(wordString);
             return wordString;
         }
 
@@ -47,12 +47,13 @@ var Word = function(answerWord) {
         //=================== METHOD 2 ======================================================================//
         //takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
         this.compareGuess = function(userGuessChar) {
+            userGuessChar = userGuessChar.toString();
             userGuessChar = userGuessChar.toLowerCase(); //doing this for comparisons later
             // console.log("Word.compareGuess: answerArray.length =" + answerArray.length);
             for (let i = 0; i < answerArray.length; i++) {
                 // console.log("Word.compareGuess: About to call checkCharGuess for this.answerArray ele "+ i);
                 this.answerArray[i].checkCharGuess(userGuessChar);
-                return this.answerArray[i].checkCharGuess(userGuessChar);//this returns as the function value the true or false return from the functions being called, so we can tell the user if their guess was correct
+                // return this.answerArray[i].checkCharGuess(userGuessChar);//this returns as the function value the true or false return from the functions being called, so we can tell the user if their guess was correct
             }
         }
 

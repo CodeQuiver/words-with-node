@@ -16,9 +16,9 @@ var Letter = function(newChar) {
         // console.log("Letter.checkCharGuess: Start of function. charGuess: "+ charGuess);
         if (this.character == charGuess) {
             this.guessed = true;
-            return true; //true= the guess was a match
+            // return true; //true= the guess was a match
         } else {
-            return false; //false= the guess was not a match
+            // return false; //false= the guess was not a match
             //the returns here are so the logic of the game in the "Word.js" file can determine directly if the letter guess was correct
             // so word1.checkCharGuess("a") as a whole would return /true/ if "a" is included
             //there may be a better way to accomplish this in the higher-level file, so commenting out for now actually
