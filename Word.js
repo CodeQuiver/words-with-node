@@ -1,8 +1,10 @@
 var Letter = require("./Letter.js");
 
-//console.log(new Letter("a"));//used to check if Letter was required correctly- passed, but leaving for future ref if I change things
+//console.log(new Letter("a"));//used to check if Letter was required correctly- 
+    // passed, but leaving for future ref if I change things
 
-// * **Word.js**: Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess.
+// * **Word.js**: Contains a constructor, Word that depends on the Letter constructor. 
+    // This is used to create an object representing the current word the user is attempting to guess.
 
 
 //==================== GLOBAL VARIABLES =================================//
@@ -53,7 +55,9 @@ var Word = function(answerWord) {
             for (let i = 0; i < answerArray.length; i++) {
                 // console.log("Word.compareGuess: About to call checkCharGuess for this.answerArray ele "+ i);
                 this.answerArray[i].checkCharGuess(userGuessChar);
-                // return this.answerArray[i].checkCharGuess(userGuessChar);//this returns as the function value the true or false return from the functions being called, so we can tell the user if their guess was correct
+                // return this.answerArray[i].checkCharGuess(userGuessChar);
+                    // this returns as the function value the true or false return from the functions being called,
+                    // so we can tell the user if their guess was correct
             }
         }
 
